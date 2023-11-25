@@ -1,14 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CreateAccountFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/logback"
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Welcome Text -->
+
+    <!-- Email EditText -->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="515dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="162dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="4dp">
+
+        <EditText
+            android:id="@+id/setbudgetEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="2.48dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Monthly Budget"
+            android:inputType="textPassword"
+            android:letterSpacing="-0.03"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#F44336"
+            android:textSize="17sp" />
+
+    </androidx.cardview.widget.CardView>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_constraintEnd_toEndOf="parent"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="517dp"
+        android:text="Welcome to BudgetBliss!"
+        android:textColor="#F4EBEB"
+        android:textSize="29sp"
+        android:textStyle="bold" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_constraintEnd_toEndOf="parent"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="483dp"
+        android:text="Create an account"
+        android:textColor="#F4EBEB"
+        android:textSize="14sp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="267dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="411dp"
+        app:cardCornerRadius="18dp">
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="2.48dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:letterSpacing="-0.03"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#F44336"
+            android:textSize="17sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="349dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="328dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="4dp">
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="2.48dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:letterSpacing="-0.03"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#F44336"
+            android:textSize="17sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="432dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="245dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="4dp">
+
+        <EditText
+            android:id="@+id/reppasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="2.48dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Repeat password"
+            android:inputType="textPassword"
+            android:letterSpacing="-0.03"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#F44336"
+            android:textSize="17sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginBottom="81dp"
+        android:backgroundTint="#FFFFFF"
+        android:letterSpacing="0"
+        android:text="Create Account"
+        android:textAllCaps="false"
+        android:textColor="#8024AE"
+        app:cornerRadius="15dp" />
+
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_constraintBottom_toBottomOf="parent"
+        android:layout_constraintEnd_toEndOf="parent"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="670dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="39dp"
+        android:text="Already have an account? "
+        android:textColor="#F1E9E9"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/logincabtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="205dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="25dp"
+        android:background="@android:color/transparent"
+        android:text="Log In"
+        android:textAllCaps="false"
+        android:textColor="#9C84DC"
+        android:textStyle="italic" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="258dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="403dp"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="30dp" >
+
+        <ImageView
+            android:layout_width="43dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            app:tint="#DF6730"
+            tools:srcCompat="@drawable/mail" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="342dp"
+        android:layout_marginBottom="110dp"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="30dp">
+
+        <ImageView
+            android:layout_width="43dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            app:tint="#DF6730"
+            tools:srcCompat="@drawable/password" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="425dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="110dp"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="30dp" >
+
+        <ImageView
+            android:layout_width="43dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            tools:srcCompat="@drawable/password"
+            app:tint="#DF6730" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="508dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="110dp"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="30dp">
+
+        <ImageView
+            android:layout_width="43dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="0dp"
+            android:layout_gravity="center"
+            app:tint="#DF6730"
+            tools:srcCompat="@drawable/money" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="206dp"
+        android:layout_height="191dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="80dp"
+        tools:srcCompat="@drawable/logo" />
+
+
+</RelativeLayout>
