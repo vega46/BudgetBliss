@@ -14,9 +14,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="111dp"
         android:layout_marginTop="172dp"
         android:layout_marginEnd="100dp"
@@ -33,14 +30,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="141dp"
         android:layout_marginTop="220dp"
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="479dp"
-        android:text="Log In to your account"
+        android:text="Log in to your account"
         android:textColor="#F4EBEB"
         android:textSize="14sp" />
 
@@ -58,7 +52,7 @@
         app:cardCornerRadius="18dp">
 
         <EditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/emailloginEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="72dp"
@@ -89,7 +83,7 @@
         app:cardElevation="4dp">
 
         <EditText
-            android:id="@+id/passwordEditText"
+            android:id="@+id/passwordloginEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="72dp"
@@ -110,10 +104,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="164dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="515dp"
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="168dp"
         android:backgroundTint="#FFFFFF"
@@ -131,9 +126,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_constraintBottom_toBottomOf="parent"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="47dp"
         android:layout_marginTop="637dp"
         android:layout_marginEnd="172dp"
@@ -147,9 +139,11 @@
         android:layout_width="177dp"
         android:layout_height="37dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="219dp"
+        android:layout_marginTop="629dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="66dp"
         android:background="@android:color/transparent"
@@ -185,19 +179,21 @@
         android:layout_height="70dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="41dp"
         android:layout_marginTop="395dp"
         android:layout_marginEnd="300dp"
-        android:layout_marginBottom="110dp"
+        android:layout_marginBottom="266dp"
         app:cardCornerRadius="100dp"
-        app:cardElevation="30dp" >
+        app:cardElevation="30dp">
 
         <ImageView
             android:layout_width="43dp"
             android:layout_height="29dp"
             android:layout_gravity="center"
-            tools:srcCompat="@drawable/password"
-            app:tint="#DF6730" />
+            app:tint="#DF6730"
+            tools:srcCompat="@drawable/password" />
     </androidx.cardview.widget.CardView>
 
     <ImageView
@@ -206,9 +202,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="125dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="80dp"
+        android:layout_marginBottom="539dp"
         tools:srcCompat="@drawable/logo" />
 
 

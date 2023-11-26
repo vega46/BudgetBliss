@@ -1,4 +1,4 @@
-package com.example.budgettracking.ui.notifications
+package com.example.budgettracking.ui.stats
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.budgettracking.databinding.FragmentCreateaccountBinding
+import com.example.budgettracking.databinding.FragmentStatsBinding
 
-class CreateAccountFragment : Fragment() {
+class StatsFragment : Fragment() {
 
-    private var _binding: FragmentCreateaccountBinding? = null
+    private var _binding: FragmentStatsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,12 +24,12 @@ class CreateAccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val notificationsViewModel =
-            ViewModelProvider(this).get(CreateAccountViewModel::class.java)
+            ViewModelProvider(this).get(StatsViewModel::class.java)
 
-        _binding = FragmentCreateaccountBinding.inflate(inflater, container, false)
+        _binding = FragmentStatsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textCreate
+        val textView: TextView = binding.textStats
         notificationsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

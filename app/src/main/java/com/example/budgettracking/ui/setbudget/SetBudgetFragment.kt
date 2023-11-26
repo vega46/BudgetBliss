@@ -1,4 +1,4 @@
-package com.example.budgettracking.ui.dashboard
+package com.example.budgettracking.ui.setbudget
 
 import android.os.Bundle
 import android.view.LayoutInflater

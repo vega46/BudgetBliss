@@ -5,55 +5,87 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CreateAccountFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CreateAccountFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var emailEditText: EditText
+    private lateinit var passwordEditText: EditText
+    private lateinit var reppasswordEditText: EditText
+    private lateinit var setbudgetEditText: EditText
+    private lateinit var nameEditText: EditText
+    private lateinit var createaccButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_createaccount, container, false)
+        val view = inflater.inflate(R.layout.fragment_createaccount, container, false)
+
+        // Initialize views
+        emailEditText = view.findViewById(R.id.emailEditText)
+        passwordEditText = view.findViewById(R.id.passwordEditText)
+        reppasswordEditText = view.findViewById(R.id.reppasswordEditText)
+        setbudgetEditText = view.findViewById(R.id.setbudgetEditText)
+        createaccButton = view.findViewById(R.id.createaccButton)
+        nameEditText = view.findViewById(R.id.nameEditText)
+
+
+        // Set click listener for create account button
+        createaccButton.setOnClickListener {
+            createUserAccount()
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BlankFragment2.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CreateAccountFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun createUserAccount() {
+
+        val application = requireActivity().application as MyApp
+        val db = application.db
+
+        val email = emailEditText.text.toString()
+        val password = passwordEditText.text.toString()
+        val repPassword = reppasswordEditText.text.toString()
+        val name = nameEditText.text.toString()
+        val budget = setbudgetEditText.text.toString().toDoubleOrNull()
+
+        // Check if passwords match
+        if (password != repPassword) {
+            // Show error message for passwords not matching
+            Toast.makeText(context, "Passwords don't match", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (!isValidEmail(email)) {
+            // Show error message for invalid email format
+            Toast.makeText(context, "Please input a valid email", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        else{
+            val user = User(name = name, email = email, password = password, categories = "", budget = budget ?: 0.0)
+            db.userDao().insertUser(user)
+        }
+
+        // Validate other fields if needed (e.g., email format)
+
+        // Create user object with validated data
+
+        // Save user to database (use your database instance here)
+        // For example, assuming you have a viewModel to handle database operations:
+        // viewModel.insertUser(user)
+
+        // After saving, navigate to the main screen or perform necessary actions
+        // For example, navigate to the main fragment with bottom navigation view
+        // (You'll need to implement your navigation logic here)
     }
+
+    private fun isValidEmail(email: String): Boolean {
+        val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+        return email.matches(emailPattern.toRegex())
+    }
+
 }

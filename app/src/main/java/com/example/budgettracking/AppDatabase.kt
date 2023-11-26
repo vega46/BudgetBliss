@@ -17,6 +17,12 @@ interface UserDao {
     @Query("SELECT * FROM users")
     fun getAllUsers(): List<User>
 
+    @Query("SELECT * FROM users LIMIT 1")
+    fun getAnyUser(): User?
+
+    @Query("SELECT * FROM users WHERE email = :email LIMIT 1")
+    fun getUserByEmail(email: String): User?
+
     @Insert
     fun insertUser(user: User)
 

@@ -11,16 +11,68 @@
     <!-- Email EditText -->
 
     <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="301dp"
+        android:layout_marginBottom="485dp"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="30dp">
+
+        <ImageView
+            android:layout_width="43dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            app:tint="#DF6730"
+            tools:srcCompat="@drawable/userlogo" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="515dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="162dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="492dp"
+        app:cardCornerRadius="18dp">
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="2.48dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Name"
+            android:inputType="textEmailAddress"
+            android:letterSpacing="-0.03"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#F44336"
+            android:textSize="17sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="516dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="161dp"
         app:cardCornerRadius="18dp"
         app:cardElevation="4dp">
 
@@ -49,32 +101,26 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="517dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="605dp"
         android:text="Welcome to BudgetBliss!"
         android:textColor="#F4EBEB"
         android:textSize="29sp"
         android:textStyle="bold" />
 
     <TextView
-        android:layout_width="148dp"
+        android:layout_width="124dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
-        android:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="216dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="483dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="137dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="562dp"
         android:text="Create an account"
         android:textColor="#F4EBEB"
         android:textSize="14sp" />
@@ -173,7 +219,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/createaccButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -198,9 +244,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_constraintBottom_toBottomOf="parent"
-        android:layout_constraintEnd_toEndOf="parent"
-        android:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="78dp"
         android:layout_marginTop="670dp"
         android:layout_marginEnd="141dp"
@@ -308,15 +351,18 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:layout_width="206dp"
-        android:layout_height="191dp"
+        android:id="@+id/cahelp"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="80dp"
-        tools:srcCompat="@drawable/logo" />
+        android:layout_marginStart="349dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="27dp"
+        android:clickable="true"
+        app:tint="#E19544"
+        tools:srcCompat="@drawable/help" />
 
 
 </RelativeLayout>
