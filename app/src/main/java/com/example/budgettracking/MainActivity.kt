@@ -1,15 +1,20 @@
 package com.example.budgettracking
 
+import android.content.Context
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.room.Room
 import com.example.budgettracking.databinding.ActivityMainBinding
 import com.example.budgettracking.ui.home.HomeFragment
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,16 +54,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isLoggedIn(): Boolean {
-        val application = application as MyApp
-        val db = application.db
-
-        // Access the UserDao to check if a user exists in the database
-        val user = db.userDao().getAnyUser() // Replace with an appropriate query
-
-        // Return true if a user exists in the database (logged in), false otherwise
-        return user != null
+        val sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("isLoggedIn", false) // Replace "isLoggedIn" with your actual key
     }
 
+
+    fun toggleBottomNavigationViewVisibility(shouldShow: Boolean) {
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view) // Replace with your actual view ID
+
+        if (shouldShow) {
+            // Show the BottomNavigationView
+            bottomNavigationView.visibility = View.VISIBLE
+        } else {
+            // Hide the BottomNavigationView
+            bottomNavigationView.visibility = View.GONE
+        }
+    }
 
 
 }

@@ -1,5 +1,7 @@
 package com.example.budgettracking
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,8 +10,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class CreateAccountFragment : Fragment() {
+class CreateAccountFragment() : Fragment() {
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
@@ -23,7 +31,10 @@ class CreateAccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_createaccount, container, false)
-
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+        (requireActivity() as MainActivity).toggleBottomNavigationViewVisibility(false)
+        val actionBar = (activity as? AppCompatActivity)?.supportActionBar
+        actionBar?.hide()
         // Initialize views
         emailEditText = view.findViewById(R.id.emailEditText)
         passwordEditText = view.findViewById(R.id.passwordEditText)
@@ -65,22 +76,39 @@ class CreateAccountFragment : Fragment() {
             return
         }
 
-        else{
-            val user = User(name = name, email = email, password = password, categories = "", budget = budget ?: 0.0)
-            db.userDao().insertUser(user)
+        else {
+            CoroutineScope(Dispatchers.IO).launch {
+                // Perform database operations in a background thread
+                val application = requireActivity().application as MyApp
+                val db = application.db
+                val existingUser = db.userDao().getUserByEmail(email)
+                if (existingUser != null) {
+
+                    requireActivity().runOnUiThread {
+                        Toast.makeText(context, "Email already exists. Please log in.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                else{
+                // ... (other parts of your code)
+                val user = User(
+                    name = name,
+                    email = email,
+                    password = password,
+                    categories = "",
+                    budget = budget ?: 0.0
+                )
+                    val sharedPreferences = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("isLoggedIn", true)
+                    editor.apply()
+                db.userDao().insertUser(user)
+                    val intent = Intent(requireActivity(), MainActivity::class.java)
+                    startActivity(intent)
+                    requireActivity().finish()
+                }
+            }
         }
 
-        // Validate other fields if needed (e.g., email format)
-
-        // Create user object with validated data
-
-        // Save user to database (use your database instance here)
-        // For example, assuming you have a viewModel to handle database operations:
-        // viewModel.insertUser(user)
-
-        // After saving, navigate to the main screen or perform necessary actions
-        // For example, navigate to the main fragment with bottom navigation view
-        // (You'll need to implement your navigation logic here)
     }
 
     private fun isValidEmail(email: String): Boolean {

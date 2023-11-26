@@ -1,4 +1,4 @@
-package com.example.budgettracking
+package com.example.budgettracking.ui.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.budgettracking.MyApp
+import com.example.budgettracking.R
 
 class LogInFragment : Fragment() {
     private lateinit var emailLoginEditText: EditText

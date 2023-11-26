@@ -22,4 +22,9 @@
         android:name="com.example.budgettracking.ui.stats.StatsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_setbudget" />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.budgettracking.ui.login.LogInFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
